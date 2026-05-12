@@ -6,26 +6,12 @@ pipeline{
       steps { 
         git branch: 'main', url: 'https://github.com/jeffreyco316/8.2CDevSecOps.git' 
       }
-      post{
-        success{
-            mail to: "jeffreyc.o.316@gmail.com",
-            subject: "Checkout Stage Email",
-            body: "Checkout was a success!"
-        }
-      } 
     } 
  
     stage('Install Dependencies') { 
       steps { 
         sh 'npm install' 
       } 
-      post{
-        failure{
-            mail to: "jeffreyc.o.316@gmail.com",
-            subject: "Install Dependencies Email",
-            body: "Install Dependencies failure!"
-        }
-      }
     } 
  
     stage('Run Tests') { 
@@ -34,7 +20,8 @@ pipeline{
       }
       post{
         failure{
-            mail to: "jeffreyc.o.316@gmail.com",
+            emailext attachLog: true
+            to: "jeffreyc.o.316@gmail.com",
             subject: "Run Tests Email",
             body: "Run Tests failure!"
         }
@@ -46,13 +33,6 @@ pipeline{
         // Ensure coverage report exists 
         sh 'npm run coverage || true' 
       }
-      post{
-        failure{
-            mail to: "jeffreyc.o.316@gmail.com",
-            subject: "Generate Coverage Report Email",
-            body: "Generate Coverage Report failure!"
-        }
-      } 
     } 
  
     stage('NPM Audit (Security Scan)') { 
@@ -61,9 +41,11 @@ pipeline{
       }
        post{
         failure{
-            mail to: "jeffreyc.o.316@gmail.com",
+            emailext attachLog: true
+            to: "jeffreyc.o.316@gmail.com", 
             subject: "NPM Audit (Security Scan) Email",
             body: "NPM Audit (Security Scan) failure!"
+            
         }
       } 
        

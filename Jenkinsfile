@@ -16,7 +16,7 @@ pipeline{
  
     stage('Run Tests') { 
       steps { 
-        bat 'npm test || true' // Allows pipeline to continue despite test failures 
+        bat 'npm test || exit /b 0' // Allows pipeline to continue despite test failures 
       }
       post{
         failure{

@@ -61,14 +61,13 @@ pipeline {
       steps { 
         sh 'npm audit || true' // This will show known CVEs in the output 
       }
-    post{
+       post{
         failure{
             mail to: "jeffreyc.o.316@gmail.com",
             subject: "NPM Audit (Security Scan) Email"
             body: "NPM Audit (Security Scan) failure!"
         }
-      }
+      } 
        
     }
-  } 
-}
+} 

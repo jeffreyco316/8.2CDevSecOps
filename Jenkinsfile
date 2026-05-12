@@ -34,13 +34,13 @@ pipeline{
     stage('Generate Coverage Report') { 
       steps { 
         // Ensure coverage report exists 
-        sh 'npm run coverage || true' 
+        bat 'npm run coverage || exit /b 0' 
       }
     } 
  
     stage('NPM Audit (Security Scan)') { 
       steps { 
-        sh 'npm audit || true' // This will show known CVEs in the output 
+        bat 'npm audit || exit /b 0' // This will show known CVEs in the output 
       }
        post{
         failure{

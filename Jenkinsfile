@@ -10,7 +10,7 @@ pipeline {
       }
       post{
         success{
-            mail to: "s221252002@deakin.edu.au",
+            mail to: "jeffreyc.o.316@gmail.com",
             subject: "Checkout Stage Email"
             body: "Checkout was a success!"
         }
@@ -23,7 +23,7 @@ pipeline {
       } 
       post{
         failure{
-            mail to: "s221252002@deakin.edu.au",
+            mail to: "jeffreyc.o.316@gmail.com",
             subject: "Install Dependencies Email"
             body: "Install Dependencies failure!"
         }
@@ -36,7 +36,7 @@ pipeline {
       }
       post{
         failure{
-            mail to: "s221252002@deakin.edu.au",
+            mail to: "jeffreyc.o.316@gmail.com",
             subject: "Run Tests Email"
             body: "Run Tests failure!"
         }
@@ -50,7 +50,7 @@ pipeline {
       }
       post{
         failure{
-            mail to: "s221252002@deakin.edu.au",
+            mail to: "jeffreyc.o.316@gmail.com",
             subject: "Generate Coverage Report Email"
             body: "Generate Coverage Report failure!"
         }
@@ -63,7 +63,7 @@ pipeline {
       }
     post{
         failure{
-            mail to: "s221252002@deakin.edu.au",
+            mail to: "jeffreyc.o.316@gmail.com",
             subject: "NPM Audit (Security Scan) Email"
             body: "NPM Audit (Security Scan) failure!"
         }

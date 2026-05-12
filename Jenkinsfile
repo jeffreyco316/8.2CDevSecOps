@@ -10,13 +10,13 @@ pipeline{
  
     stage('Install Dependencies') { 
       steps { 
-        sh 'npm install' 
+        bat 'npm install' 
       } 
     } 
  
     stage('Run Tests') { 
       steps { 
-        sh 'npm test || true' // Allows pipeline to continue despite test failures 
+        bat 'npm test || true' // Allows pipeline to continue despite test failures 
       }
       post{
         failure{

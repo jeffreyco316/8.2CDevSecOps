@@ -21,7 +21,7 @@ pipeline{
       post{
         failure{
             emailext attachLog: true
-                subject: "Run Tests Email",
+                subject:"Run Tests Email",
                 body: "Run Tests failure!",
                 to: "jeffreyc.o.316@gmail.com"
         }

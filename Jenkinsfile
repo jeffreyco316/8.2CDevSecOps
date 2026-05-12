@@ -21,9 +21,9 @@ pipeline{
       post{
         failure{
             emailext attachLog: true
-            to: "jeffreyc.o.316@gmail.com",
             subject: "Run Tests Email",
-            body: "Run Tests failure!"
+            body: "Run Tests failure!",
+            to: "jeffreyc.o.316@gmail.com"
         }
       } 
     } 
@@ -42,9 +42,9 @@ pipeline{
        post{
         failure{
             emailext attachLog: true
-            to: "jeffreyc.o.316@gmail.com", 
             subject: "NPM Audit (Security Scan) Email",
-            body: "NPM Audit (Security Scan) failure!"
+            body: "NPM Audit (Security Scan) failure!",
+            to: "jeffreyc.o.316@gmail.com"
             
         }
       } 

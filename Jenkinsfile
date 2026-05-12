@@ -19,7 +19,7 @@ pipeline{
         bat 'npm test || exit /b 0' // Allows pipeline to continue despite test failures 
       }
       post{
-        failure{
+        success{
             emailext(
                 attachLog: true,
                 subject: "Run Tests Email",
@@ -43,7 +43,7 @@ pipeline{
         bat 'npm audit || exit /b 0' // This will show known CVEs in the output 
       }
        post{
-        failure{
+        success{
             emailext(
                 attachLog: true, 
                 subject: "NPM Audit (Security Scan) Email",

@@ -24,7 +24,7 @@ pipeline{
                 attachLog: true,
                 subject: "Run Tests Email",
                 body: "Run Tests completed!",
-                to: "jeffreyofoedu@gmail.com"
+                to: "jeffreyc.o.316@gmail.com"
             )
 
         }
@@ -48,7 +48,7 @@ pipeline{
                 attachLog: true, 
                 subject: "NPM Audit (Security Scan) Email",
                 body: "See NPM Audit (Security Scan) status",
-                to: "jeffreyofoedu@gmail.com"
+                to: "jeffreyc.o.316@gmail.com"
             )
         }
       } 
